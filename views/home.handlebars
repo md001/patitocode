@@ -1,0 +1,184 @@
+<!-- Slide1 -->
+	<section class="slide1 rs1-slick1">
+		<div class="wrap-slick1">
+			<div class="slick1">
+				<div class="item-slick1 item1-slick1" style="background-image: url(images/HomePortada1.png );">
+					<div class="wrap-content-slide1 size24 flex-col-c-m p-l-15 p-r-15 p-t-120 p-b-170">
+						<h2 class="caption1-slide1 xl-text3 t-center bo15 p-b-3 animated visible-false m-b-25" data-appear="fadeInUp">
+							LOS MEJORES MANUALES DIGÍTALES
+						</h2>
+
+						<span class="caption2-slide1 m-text27 t-center animated visible-false m-b-30" data-appear="fadeInDown">
+							Manuales Digítales 2018
+						</span>
+
+						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
+							<!-- Button -->
+							<a href="manualesdigitales" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+								COMPRAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick1 item1-slick1" style="background-image: url(images/HomePortada1.png);">
+					<div class="wrap-content-slide1 size24 flex-col-c-m p-l-15 p-r-15 p-t-120 p-b-170">
+						<h2 class="caption1-slide1 xl-text3 t-center bo15 p-b-3 animated visible-false m-b-25" data-appear="rotateInDownLeft">
+							Galeria de Imagenes en Node.js
+						</h2>
+
+						<span class="caption2-slide1 m-text27 t-center animated visible-false m-b-30" data-appear="rotateInUpRight">
+							Consigue el manual y crea hoy tu primera galeria de imagenes en Node.js
+						</span>
+
+						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn">
+							<!-- Button -->
+							<a href="manualesdigitales" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+								Tienda
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item-slick1 item1-slick1" style="background-image: url(images/HomePortada1.png);">
+					<div class="wrap-content-slide1 size24 flex-col-c-m p-l-15 p-r-15 p-t-120 p-b-170">
+						<h2 class="caption1-slide1 xl-text3 t-center bo15 p-b-3 animated visible-false m-b-25" data-appear="rollIn">
+							Calculadora de Peso en Node.js
+						</h2>
+
+						<span class="caption2-slide1 m-text27 t-center animated visible-false m-b-30" data-appear="lightSpeedIn">
+							¿Quieres saber si eres gordito?, crea tu primera aplicación de peso hoy mismo.
+						</span>
+
+						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="slideInUp">
+							<!-- Button -->
+							<a href="manualesdigitales" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
+								Tienda
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Top noti -->
+	<div class="pos-relative">
+		<div class="flex-c-m size22 bg0 s-text21 ab-b-l op-0-9">
+			¡En la compra de 2 manuales llevate el tercero al 50% de descuento!
+			<a href="manualesdigitales" class="s-text22 hov6 p-l-5">
+				¡Ve a la Tienda ahora!
+			</a>
+
+			<button class="flex-c-m pos2 size23 colorwhite eff3 trans-0-4 btn-romove-top-noti">
+				<i class="fa fa-remove fs-13" aria-hidden="true"></i>
+			</button>
+		</div>
+	</div>
+	<!-- Our product -->
+	<section class="bgwhite p-t-115 p-b-58">
+		<div class="container">
+			<div class="sec-title p-b-22">
+				<h3 class="m-text5 t-center">
+					Nuestro Productos
+				</h3>
+			</div>
+
+			<!-- Tab01 -->
+			<div class="tab01">
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#best-seller" role="tab">Los mas vendidos</a>
+					</li>
+					
+				</ul>
+
+				<!-- Tab panes -->
+				<div class="tab-content p-t-35">
+					<!-- - -->
+					<div class="tab-pane fade show active" id="best-seller" role="tabpanel">
+						<div class="row">
+							{{#each manuales}}
+						<div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+									<img src="{{imagen}}" alt="IMG-PRODUCT">
+
+									<div class="block2-overlay trans-0-4">
+										
+
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+												Agregar
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									<a href="productdetail?key={{key}}" class="block2-name dis-block m-text20 p-b-5">
+										{{titulo}}
+									</a>
+                                   <p class="block2-name dis-block s-text3 p-b-5">
+										{{autor}}
+									</p>
+
+									<p class="block2-name dis-block m-text20 p-b-5" style="color:#B12704;">
+										${{precio}}
+									</p>
+                                    <p  class="block2-name dis-block s-text5 p-b-5" style="color:rgb(7, 119, 40);">
+										{{tecnologia}}
+									</p>
+									<p class="block2-name dis-block m-text20 p-b-5" style="color:#B12704;">
+										{{ventas}} vendidos
+									</p>
+								</div>
+							</div>
+						</div>
+                        {{/each}}
+						</div>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Shipping -->
+	<section class="shipping bgwhite p-t-62 p-b-46">
+		<div class="flex-w p-l-15 p-r-15">
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+				<h4 class="m-text12 t-center">
+					Entrega gratuita en todo el mundo
+				</h4>
+
+				<a href="#" class="s-text11 t-center">
+					Haga clic aquí para más información
+				</a>
+			</div>
+
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
+				<h4 class="m-text12 t-center">
+					30 días de regreso
+				</h4>
+
+				<span class="s-text11 t-center">
+					Simplemente devuélvalo dentro de los 30 días para un intercambio.
+				</span>
+			</div>
+
+			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
+				<h4 class="m-text12 t-center">
+				Tienda de apertura
+				</h4>
+
+				<span class="s-text11 t-center">
+					Tienda abierta de Lunes a Domingo
+				</span>
+			</div>
+		</div>
+	</section>

@@ -1,0 +1,157 @@
+<!-- Dashboard header -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background: linear-gradient(.536turn,#ec5252,#6e1a52);">
+    <h2 class="l-text2 t-center">
+        Admin login
+    </h2>
+    <p class="m-text13 t-center">
+        Identificarse como administrador
+    </p>
+</section>
+
+<!-- Dashboard page -->
+<section class="bgwhite p-t-66 p-b-38">
+    <div class="container">        
+        <div class="row p-t-30">
+            {{#if user}}
+            <div class="col-md-6">
+                <div class="bo4 of-hidden m-b-20">
+                    <p>
+                        <img src="{{user.picture}}" id="signed-in-pic" style="margin-left: 20px; width: 128px; height: 128;">
+                        Bienvenido,&nbsp;<span id="signed-in-name"><b>{{user.name}}</b></span>
+                    </p>
+                </div>
+                <div class="col-md-6 p-b-30">
+                    <button id="sign-out-btn" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" style="width: 256px;" onclick="firebase.auth().signOut();">
+                        Salir
+                    </button>
+                </div>
+                {{!-- </form> --}}
+            </div>
+            {{else}}
+            <div class="col-md-6">
+                {{!-- <form id="login" action="admin-auth" method="post" onsubmit="passAuth()"> --}}
+                <div class="bo4 of-hidden size15 m-b-20">
+                    <input class="sizefull s-text7 p-l-22 p-r-22" type="email" name="mail" id="mail" placeholder="Correo e" value="" >
+                </div>
+                <div class="bo4 of-hidden size15 m-b-20">
+                    <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="pass" id="pass" placeholder="Contrase&ntilde;a" value="" >
+                </div>
+                <div class="col-md-6 p-b-30">
+                    {{!-- <input type="submit" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" value="Iniciar sesi&oacute;n"> --}}
+                    <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" onclick="passAuth()">
+                        <i class="material-icons">account_circle</i>
+                        &nbsp;Iniciar sesi&oacute;n&nbsp;
+                        <i class="material-icons">message</i>
+                    </button>
+                </div>
+                {{!-- </form> --}}
+            </div>
+            {{/if}}
+
+            {{#if false}}
+            <div class="col-md-6" style="height: 256px;">
+                <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                
+                    <!-- Header section containing title -->
+                    <!--
+                    <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+                        <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+                        <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+                            <h3>Bienvenido</h3>
+                        </div>
+                        </div>
+                    </header>
+                    -->
+                    
+                    
+                    <main class="mdl-layout__content">                        
+                        <!--
+                        <div class="mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+                        -->
+                            <!-- Card containing the sign-in UI -->
+                            <div id="signed-out-card" class="mdl-card mdl-shadow--2dp mdl-cell" style="width: 90%; height: 90%;">
+                                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                                    <p>Identif&iacute;quese con <strong>Google</strong>.</p>
+                                    <!-- button id="sign-in-btn" class="mdl-color-text--grey-700 mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect" -->
+                                    <button id="sign-in-btn" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" style="width: 256px;">
+                                        <i class="material-icons">account_circle</i>
+                                        &nbsp;Iniciar sesi&oacute;n&nbsp;
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 48 48" class="abcRioButtonSvg">
+                                            <g>
+                                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                                                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                                                <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                                                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+                                                <path fill="none" d="M0 0h48v48H0z" />
+                                            </g>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Card containing the signed-in UI -->
+                            <div id="signed-in-card" class="mdl-card mdl-shadow--2dp mdl-cell" style="width: 90%; height: 90%;">
+                                <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                                    <p>
+                                        <img id="signed-in-pic" style="margin-left: 20px; width: 128px; height: 128;">
+                                        Bienvenido,&nbsp;<span id="signed-in-name"></span>
+                                        <div style="display: none">Firebase User ID: <span id="signed-in-uid"></span></div>
+                                    </p>
+                                    <button id="sign-out-btn" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" style="width: 256px;">
+                                        Sign out
+                                    </button>
+                                    <br />
+                                    <div style="display: none">
+                                        <button id="delete-acc-btn" class="mdl-color-text--grey-700 mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">
+                                            Borrar cuenta
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        <!--/div--> <!-- mdl-cell--12-col -->
+                    </main>                    
+                </div><!-- div demo-layout -->
+            </div>
+            {{/if}}
+        </div>
+        
+        <div class="row p-t-30">
+            <div class="col-md-12" style="height: 500px;">
+            </div><!-- div col 12 -->
+        </div><!-- div row -->
+        <!-- 
+        <div class="row p-t-30">
+            <div class="col-md-4 p-b-30">
+                <form>
+                    <div>
+                        <input id="email" type="text" placeholder="Email...">
+                    </div>
+                    <div>
+                        <input id="password" type="password" placeholder="Password...">
+                    </div>
+                    <div>
+                        <button id="sign-in">Sign In/Register</button>
+                        <button id="sign-out">Sign Out</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row p-t-30">
+            <div class="col-md-4 p-b-30">
+                <div class="hov-img-zoom">
+                    <img src="images/banner-14.jpg" alt="IMG-ABOUT">
+                </div>
+            </div>
+            <div class="col-md-8 p-b-30">
+                <h3 class="m-text26 p-t-15 p-b-16">
+                    Admin dashboard
+                </h3>
+                <p class="p-b-28">
+                    Admin dashboard, sal si no tienes permiso&excl;
+                </p>
+            </div>
+        </div>
+        -->
+    </div>
+</section>
+

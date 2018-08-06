@@ -1,0 +1,97 @@
+<!-- Topbar -->
+<div class="wrap_header" >
+    <div class="header-icons" >
+        {{#if admin}}
+            <span class="topbar-email">{{user.name}}</span>
+            <span class="linedivide1"></span>
+            <div class="header-wrapicon2">
+                <img src="{{user.picture}}" class="header-icon1 js-show-header-dropdown" alt="{{user.name}}">
+
+                <!-- Header cart noti -->
+                <div class="header-cart header-dropdown">
+                    <ul class="header-cart-wrapitem">
+                        <li class="header-cart-item">
+                            <div class="header-cart-item-img">
+                                <img src="{{user.picture}}" class="header-icon1" alt="{{user.name}}">
+                            </div>
+                            <div class="header-cart-item-txt">
+                                <a href="admin-login" class="header-cart-item-name">{{user.name}}</a>
+                                <span class="header-cart-item-info">{{user.email}}</span>
+                            </div>
+                        </li>
+                    <div class="header-cart-buttons">
+                        <div class="header-cart-wrapbtn">
+                            <!-- Button -->
+                            <button onclick=="firebase.auth().signOut()" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <span class="topbar-email">Usuario no logueado</span>
+            <span class="linedivide1"></span>
+            <a href="#" class="header-wrapicon1 dis-block">
+                <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+            </a>
+        {{/if}}
+    </div>
+</div>
+
+<!-- Dashboard header -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(images/heading-pages-04.jpg);">
+    <h2 class="l-text2 t-center">
+        Admin dashboard
+    </h2>
+    <p class="m-text13 t-center">
+        Admin dashboard, sal si no tienes permiso&excl;
+    </p>
+</section>
+
+<!-- Dashboard page -->
+<section class="bgwhite p-t-66 p-b-38">
+    <div class="container">
+        
+        {{#if user}}
+            <div class="row p-t-30">
+                <div class="col-md-12 p-b-30">
+                    <h1>Bienvenido, {{user.name}}!</h1><br />
+                    <ul>
+                        <li>Tu UID: {{user.uid}}</li>
+                        <li>Tu email: {{user.email}}</li>
+                        <li>Tu imagen de perfil: <img src="{{user.picture}}" alt="Imagen de perfil" style="height:64px; width:64px"></img></li>
+                    </ul>
+                    <br /><br />
+                    <!--button id="sign-out-btn-2" class="mdl-color-text--grey-700 mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect">Sign-out</button-->
+                    <button class="mdl-color-text--grey-700 mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect" onclick="firebase.auth().signOut()">Sign-out</button>
+                </div>
+            </div>
+        {{else}}
+            <div class="row p-t-30">
+                <div class="col-md-12 p-b-30">
+                    <h1>Bienvenido, usuario</h1><br />
+                    <ul>
+                        <li>Identif&iacute;quese</li>
+                    </ul>
+                    <br /><br />
+                    <a href="admin-login" >Login administrativo</a>
+                </div>
+            </div>
+        {{/if}}
+            <div class="row p-t-30">
+                <div class="col-md-4 p-b-30">
+                    <div class="hov-img-zoom">
+                        <img src="images/banner-14.jpg" alt="IMG-ABOUT">
+                    </div>
+                </div>
+                <div class="col-md-8 p-b-30">
+                    <h2 class="m-text26 p-t-15 p-b-16">
+                        Admin dashboard
+                    </h3>
+                    <p class="p-b-28">
+                        Admin dashboard, admin logged
+                    </p>
+                </div>
+            </div>
+    </div>
+</section>
+

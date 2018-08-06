@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PatitoCode | Manuales Digitales</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/themify/themify-icons.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/elegant-font/html-css/style.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+
+<!-- Admin Login scripts -->
+{{#if admin}}
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css">
+	<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+	<link rel="stylesheet" href="css/admin.css">
+{{/if}}
+
+</head>
+<body class="animsition">
+
+<!-- Admin UI Header -->
+{{#if admin}}
+<!-- Header -->
+<header class="header3">
+	<!-- Header desktop -->
+	<div class="container-menu-header-v3">
+		<div class="wrap_header3 p-t-74">
+			<!-- Logo -->
+			<a href="/" class="logo3 p-l-15">
+				<img src="images/icons/PatitoCode_Manuales_Logo.png" alt="IMG-LOGO">
+			</a>
+
+			<p>&nbsp;</p>
+
+			<!-- Menu -->
+			<div class="wrap_menu">
+				<nav class="menu">
+					<ul class="main_menu">
+						<li>
+							<a href="admin-login">Login administrativo</a>
+						</li>
+						<li>
+							<a href="manualesdigitalesadmin">Administrador de catálogo</a>
+						</li>
+						<li>
+							<a href="nuevoproducto">Agregar manual</a>
+						</li>
+						<li>
+							<hr />
+						</li>
+						<li>
+							<a href="/">Regresar al sitio</a>
+						</li>
+						<!-- Página de prueba -->
+						<!-- li>
+							<a href="dashboard">Dashboard</a>
+						</li-->
+						
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- Header Mobile -->
+	<div class="wrap_header_mobile">
+		<!-- Logo moblie -->
+		<a href="/" class="logo-mobile">
+			<img src="images/icons/PatitoCode_Manuales_Logo.png" alt="IMG-LOGO">
+		</a>
+
+		<!-- Button show menu -->
+		<div class="btn-show-menu">
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Menu Mobile -->
+	<div class="wrap-side-menu" >
+		<nav class="side-menu">
+			<ul class="main-menu">
+				<li class="item-menu-mobile">
+					<a href="/">Regresar al sitio</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- User UI Header -->
+{{else}}
+<!-- Header -->
+<header class="header3">
+	<!-- Header desktop -->
+	<div class="container-menu-header-v3">
+		<div class="wrap_header3 p-t-74">
+			<!-- Logo -->
+			<a href="/" class="logo3 p-l-15">
+				<img src="images/icons/PatitoCode_Manuales_Logo.png" alt="IMG-LOGO">
+			</a>
+
+			<!-- Header Icon -->
+			<div class="header-icons3 p-t-38 p-b-60 p-l-23">
+				<a href="#" class="header-wrapicon1 dis-block">
+					<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+				</a>
+
+				<span class="linedivide1"></span>
+
+				<div class="header-wrapicon2">
+					<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+					<span class="header-icons-noti">0</span>
+
+					<!-- Header cart noti -->
+					<div id="divCarrito" class="header-cart header-dropdown">
+						<ul class="header-cart-wrapitem">
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-01.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										White Shirt With Pleat Detail Back
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $19.00
+									</span>
+								</div>
+							</li>
+
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-02.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										Converse All Star Hi Black Canvas
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $39.00
+									</span>
+								</div>
+							</li>
+
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-03.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										Nixon Porter Leather Watch In Tan
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $17.00
+									</span>
+								</div>
+							</li>
+						</ul>
+
+						<div id="divTotal" class="header-cart-total">
+							Total: <span id="total">$75.00</span>
+						</div>
+
+						<div class="header-cart-buttons">
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="/cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									Ver carrito
+								</a>
+							</div>
+
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									Comprar
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Menu -->
+			<div class="wrap_menu">
+				<nav class="menu">
+					<ul class="main_menu">
+						<li>
+							<a href="/">Inicio</a>
+						</li>
+
+						<li>
+							<a href="manualesdigitales">Manuales Digitales</a>
+						</li>
+
+						<li>
+							<a href="carritodecompras">Carrito de Compras</a>
+						</li>
+
+						<li>
+							<a href="sobrenosotros">Sobre Nosotros</a>
+						</li>
+
+						<li>
+							<a href="contacto">Contacto</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<div class="bottombar flex-col-c p-b-65">
+			<div class="bottombar-social t-center p-b-8">
+				<a href="#" class="topbar-social-item fa fa-facebook"></a>
+				<a href="#" class="topbar-social-item fa fa-instagram"></a>
+				<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+				<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+				<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+			</div>
+
+			<div class="bottombar-child2 p-r-20">
+				<div class="topbar-language rs1-select2">
+					<select class="selection-1" name="time">
+						<option>MXN</option>
+						<option>USD</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Header Mobile -->
+	<div class="wrap_header_mobile">
+		<!-- Logo moblie -->
+		<a href="index.html" class="logo-mobile">
+			<img src="images/icons/PatitoCode_Manuales_Logo.png" alt="IMG-LOGO">
+		</a>
+
+		<!-- Button show menu -->
+		<div class="btn-show-menu">
+			<!-- Header Icon mobile -->
+			<div class="header-icons-mobile">
+				<a href="#" class="header-wrapicon1 dis-block">
+					<img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+				</a>
+
+				<span class="linedivide2"></span>
+
+				<div class="header-wrapicon2">
+					<img src="images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+					<span class="header-icons-noti">0</span>
+
+					<!-- Header cart noti -->
+					<div class="header-cart header-dropdown">
+						<ul class="header-cart-wrapitem">
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-01.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										White Shirt With Pleat Detail Back
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $19.00
+									</span>
+								</div>
+							</li>
+
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-02.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										Converse All Star Hi Black Canvas
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $39.00
+									</span>
+								</div>
+							</li>
+
+							<li class="header-cart-item">
+								<div class="header-cart-item-img">
+									<img src="images/item-cart-03.jpg" alt="IMG">
+								</div>
+
+								<div class="header-cart-item-txt">
+									<a href="#" class="header-cart-item-name">
+										Nixon Porter Leather Watch In Tan
+									</a>
+
+									<span class="header-cart-item-info">
+										1 x $17.00
+									</span>
+								</div>
+							</li>
+						</ul>
+
+						<div class="header-cart-total">
+							Total: $75.00
+						</div>
+
+						<div class="header-cart-buttons">
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									View Cart
+								</a>
+							</div>
+
+							<div class="header-cart-wrapbtn">
+								<!-- Button -->
+								<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									Check Out
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Menu Mobile -->
+	<div class="wrap-side-menu" >
+		<nav class="side-menu">
+			<ul class="main-menu">
+				<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+					<span class="topbar-child1">
+						Free shipping for standard order over $100
+					</span>
+				</li>
+
+				<li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+					<div class="topbar-child2-mobile">
+						<span class="topbar-email">
+							fashe@example.com
+						</span>
+
+						<div class="topbar-language rs1-select2">
+							<select class="selection-1" name="time">
+								<option>USD</option>
+								<option>EUR</option>
+							</select>
+						</div>
+					</div>
+				</li>
+
+				<li class="item-topbar-mobile p-l-10">
+					<div class="topbar-social-mobile">
+						<a href="#" class="topbar-social-item fa fa-facebook"></a>
+						<a href="#" class="topbar-social-item fa fa-instagram"></a>
+						<a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+						<a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+						<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+					</div>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="/">Inicio</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="manualesdigitales">Manuales Digitales</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="carritodecompras">Carrito de Compras</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="sobrenosotros">Sobre Nosotros</a>
+				</li>
+
+				<li class="item-menu-mobile">
+					<a href="contacto">Contacto</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- /if Admin/User UI Header-->
+{{/if}}
+
+<div class="container1-page">
+{{{body}}}
+
+<!-- Admin UI Footer-->
+{{#if admin}}
+<!-- Admin footer -->
+<footer class="bg6 p-t-45 p-b-43 p-l-65 p-r-65 p-lr-0-xl1">
+	<div class="flex-w p-b-90">
+		<div class="w-size6 p-t-30 p-l-15 p-r-15 respon6">
+			<h4 class="s-text12 p-b-30">
+				Main Title
+			</h4>
+			<div>
+				<p class="s-text7 w-size26">
+					Main text, main text, main text, main text, main text, main text...
+				</p>
+			</div>
+		</div>
+		<div class="w-size7 p-t-30 p-l-15 p-r-15 respon7">
+			<h4 class="s-text12 p-b-30">
+				Categories title
+			</h4>
+			<ul>
+				<li class="p-b-9">
+					<a href="#" class="s-text7">
+						Categorie 1
+					</a>
+				</li>
+
+				<li class="p-b-9">
+					<a href="#" class="s-text7">
+						Categorie 2
+					</a>
+				</li>
+
+				<li class="p-b-9">
+					<a href="#" class="s-text7">
+						Categorie 3
+					</a>
+				</li>
+
+				<li class="p-b-9">
+					<a href="#" class="s-text7">
+						Categorie 4
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<!-- User UI Footer -->
+{{else}}
+<!-- Footer -->
+<footer class="bg6 p-t-45 p-b-43 p-l-65 p-r-65 p-lr-0-xl1">
+	<div class="flex-w p-b-90">
+		<div class="w-size6 p-t-30 p-l-15 p-r-15 respon6">
+			<h4 class="s-text12 p-b-30">
+				GET IN TOUCH
+			</h4>
+
+			<div>
+				<p class="s-text7 w-size26">
+					Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+				</p>
+
+				
+			</div>
+		</div>
+
+		<div class="w-size7 p-t-30 p-l-15 p-r-15 respon7">
+			
+		</div>
+
+		<div class="w-size7 p-t-30 p-l-15 p-r-15 respon7">
+			
+		</div>
+
+		<div class="w-size7 p-t-30 p-l-15 p-r-15 respon7">
+			
+		</div>
+
+		<div class="w-size8 p-t-30 p-l-15 p-r-15 respon6">
+			
+		</div>
+	</div>
+
+	<div class="t-center p-l-15 p-r-15">
+		
+		<div class="t-center s-text8 p-t-20">
+			Copyright © 2018 All rights reserved. | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+		</div>
+
+		<div class="t-center s-text8 p-t-20">
+			<a href="admin-login">Login Administrativo</a>
+		</div>
+
+		
+	</div>
+</footer>
+<!-- /if Admin/User UI -->
+{{/if}}
+</div>
+
+<!-- Back to top -->
+<div class="btn-back-to-top bg0-hov" id="myBtn">
+	<span class="symbol-btn-back-to-top">
+		<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+	</span>
+</div>
+
+<!-- Container Selection1 -->
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/select2/select2.min.js"></script>
+	<script type="text/javascript">
+		$(".selection-1").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slick-custom.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
+	<!--
+	<script type="text/javascript">
+		$('.block2-btn-addcart').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+
+		$('.block2-btn-addwishlist').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+			});
+		});
+	</script>
+	-->
+
+    <!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<!--===============================================================================================-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="js/map-custom.js"></script>
+    <!--===============================================================================================-->
+
+	<!-- Admin UI Scripts-->
+	{{#if admin}}
+		<!-- Firebase -->
+		<script defer src="/__/firebase/4.8.0/firebase-app.js"></script>
+		<script defer src="/__/firebase/4.8.0/firebase-auth.js"></script>
+		<script defer src="/__/firebase/4.8.0/firebase-database.js"></script>
+		<!-- initialize the SDK after all desired features are loaded -->
+		<script defer src="/__/firebase/init.js"></script>
+		
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyBhEFntDO4UvJwONo8RX31hmzAPjO6RMTk",
+				authDomain: "mercalo-b9e9f.firebaseapp.com",
+				databaseURL: "https://mercalo-b9e9f.firebaseio.com",
+				projectId: "mercalo-b9e9f",
+				storageBucket: "mercalo-b9e9f.appspot.com",
+				messagingSenderId: "1047799333418"
+			};
+			firebase.initializeApp(config);
+		</script>
+
+		<script src="js/admin.js"></script>
+
+		<script>
+			function checkCookie() {
+				// Checks if it's likely that there is a signed-in Firebase user and the session cookie expired.
+				// In that case we'll hide the body of the page until it will be reloaded after the cookie has been set.
+				var hasSessionCookie = document.cookie.indexOf('__session=') !== -1;
+				var isProbablySignedInFirebase = typeof Object.keys(localStorage).find(function (key) {
+						return key.startsWith('firebase:authUser')
+					}) !== 'undefined';
+				if (!hasSessionCookie && isProbablySignedInFirebase) {
+					var style = document.createElement('style');
+					style.id = '__bodyHider';
+					style.appendChild(document.createTextNode('body{display:block}'));
+					document.head.appendChild(style);
+				}
+			}
+
+			checkCookie();
+
+			document.addEventListener('DOMContentLoaded', function() {
+				// Make sure the Firebase ID Token is always passed as a cookie.
+				firebase.auth().addAuthTokenListener(function (idToken) {
+				var hadSessionCookie = document.cookie.indexOf('__session=') !== -1;
+				document.cookie = '__session=' + idToken + ';max-age=' + (idToken ? 3600 : 0);
+				// If there is a change in the auth state compared to what's in the session cookie we'll reload after setting the cookie.
+				if ((!hadSessionCookie && idToken) || (hadSessionCookie && !idToken)) {
+					window.location.reload(true);
+				} else {
+					// In the rare case where there was a user but it could not be signed in (for instance the account has been deleted).
+					// We un-hide the page body.
+					var style = document.getElementById('__bodyHider');
+					if (style) {
+					document.head.removeChild(style);
+					}
+				}
+				});
+			});
+		</script>
+
+		<script>
+			function toggleImageChange() {
+				var check = document.getElementById('chkModImg');
+				if( check.checked ){
+					document.getElementById('keepImage').style.display = "none";
+					document.getElementById('changeImage').style.display = "block";
+				} else {
+					document.getElementById('keepImage').style.display = "block";
+					document.getElementById('changeImage').style.display = "none";
+				}
+			}
+		</script>
+	{{/if}}
+
+	<script>
+		function passAuth() {
+			//window.alert('Inside passAuth()');
+			var mail = document.getElementById('mail').value;
+			var pass = document.getElementById('pass').value;
+			firebase.auth().signInWithEmailAndPassword(mail, pass)
+			.then((credential) => {
+				// alert('then(credential)');
+				// console.log('cookie:', credential.pa);
+				var date = new Date();
+				date.setTime(date.getTime() + ( 1 * 60 * 60 * 1000)); // 1 hr
+				var cookie = '__session=' + credential.pa;
+				cookie += '; expires=' + date.toUTCString();
+				cookie += '; path=/';
+				document.cookie = cookie;
+			})
+			.catch((error) => {
+				// window.alert('Sign in error in passAuth()');
+				console.log('Auth error code', error.code);
+				console.log('Auth error message', error.message);
+			})
+		}
+	</script>
+
+	<script>
+		function handleFileSelect(evt) {
+			var files = evt.target.files; // FileList object
+
+			// Loop through the FileList and render image files as thumbnails.
+			for (var i = 0, f; f = files[i]; i++) {
+				// Only process image files.
+				if (!f.type.match('image.*')) {
+					continue;
+				}
+
+				var reader = new FileReader();
+
+				// Closure to capture the file information.
+				reader.onload = ( function(theFile) {
+					return function(e) {
+					// Render thumbnail.
+						var span = document.createElement('span');
+						span.innerHTML = ['<img class="portada" src="', e.target.result,'" title="', escape(theFile.name), '"/>'].join('');
+						document.getElementById('vistaprevia').insertBefore(span, null);
+					};
+				})(f);
+
+				// Read in the image file as a data URL.
+				reader.readAsDataURL(f);
+
+			}
+		}
+
+		document.getElementById('exampleFormControlFile1').addEventListener('change', handleFileSelect, false);
+	</script>
+
+	<script>
+		function addToCart(key) {
+			// agregar <li></li> con la info del manual
+			// calcular el total del carrito
+			/* 
+				estructura del div del carrito
+				<div id="divCarrito" ...>
+					<ul ...>
+						<li ...>
+							...
+						</li>
+					</ul>
+					<div id="divTotal" ...>
+						Total: <span id="total">$75.00</span>
+					</div>
+
+					<div class="header-cart-buttons">
+						...
+					</div>
+				</div>
+				cada elemento del carrito es un <li>
+				<li class="header-cart-item">
+					<div class="header-cart-item-img">
+						<img src="images/item-cart-01.jpg" alt="IMG">
+					</div>
+					<div class="header-cart-item-txt">
+						<a href="#" class="header-cart-item-name">
+							White Shirt With Pleat Detail Back
+						</a>
+						<span class="header-cart-item-info">
+							1 x $19.00
+						</span>
+					</div>
+				</li>
+			*/
+		}
+	</script>
+
+</body>
+</html>

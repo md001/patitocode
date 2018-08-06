@@ -1,0 +1,63 @@
+<!-- Title Page -->
+	<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background: linear-gradient(.536turn,#ec5252,#6e1a52);">
+		<h2 class="l-text2 t-center">
+			Manuales Digitales
+		</h2>
+		<p class="m-text13 t-center">
+			Aprende facil y a tu ritmo con los mejores manuales de programación en PatitoCode Tienda de Manuales Digitales de Programación
+		</p>
+	</section>
+<!-- Content page -->
+	<section class="bgwhite p-t-55 p-b-65">
+		<div class="container">
+			<div class="row">
+				
+
+				<div class="col-sm-9 col-md-11 col-lg-12 p-b-50">
+					
+
+					<!-- Product -->
+					<div class="row">
+                        {{#each manuales}}
+						<div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+							<!-- Block2 -->
+							<div class="block2">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+									<img src="{{imagen}}" alt="IMG-PRODUCT">
+									<div class="block2-overlay trans-0-4">
+										<div class="block2-btn-addcart w-size1 trans-0-4">
+											<!-- Button -->
+											<!--<form> action="eliminarmanual" method="post" 
+												<input type="hidden"  name="key" value="{{key}}">-->
+												<button onclick="addToCart('{{key}}')" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+													Agregar
+												</button>
+											<!-- </form> -->
+										</div>
+									</div>
+								</div>
+
+								<div class="block2-txt p-t-20">
+									<a href="productdetail?key={{key}}" class="block2-name dis-block m-text20 p-b-5">
+										{{titulo}}
+									</a>
+                                   <p class="block2-name dis-block s-text3 p-b-5">
+										{{autor}}
+									</p>
+
+									<p class="block2-name dis-block m-text20 p-b-5" style="color:#B12704;">
+										${{precio}}
+									</p>
+                                    <p  class="block2-name dis-block s-text5 p-b-5" style="color:rgb(7, 119, 40);">
+										{{tecnologia}}
+									</p>
+								</div>
+							</div>
+						</div>
+                        {{/each}}
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

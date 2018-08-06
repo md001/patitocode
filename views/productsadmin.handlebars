@@ -1,0 +1,108 @@
+<!-- Topbar -->
+<div class="wrap_header" >
+    <div class="header-icons" >
+        {{#if admin}}
+            <span class="topbar-email">{{user.name}}</span>
+            <span class="linedivide1"></span>
+            <div class="header-wrapicon2">
+                <img src="{{user.picture}}" class="header-icon1 js-show-header-dropdown" alt="{{user.name}}">
+
+                <!-- Header cart noti -->
+                <div class="header-cart header-dropdown">
+                    <ul class="header-cart-wrapitem">
+                        <li class="header-cart-item">
+                            <div class="header-cart-item-img">
+                                <img src="{{user.picture}}" class="header-icon1" alt="{{user.name}}">
+                            </div>
+                            <div class="header-cart-item-txt">
+                                <a href="admin-login" class="header-cart-item-name">{{user.name}}</a>
+                                <span class="header-cart-item-info">{{user.email}}</span>
+                            </div>
+                        </li>
+                    <div class="header-cart-buttons">
+                        <div class="header-cart-wrapbtn">
+                            <!-- Button -->
+                            <button onclick="firebase.auth().signOut()" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <span class="topbar-email">Usuario no logueado</span>
+            <span class="linedivide1"></span>
+            <a href="#" class="header-wrapicon1 dis-block">
+                <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+            </a>
+        {{/if}}
+    </div>
+</div>
+
+<!-- Title Page -->
+<section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background: linear-gradient(.536turn,#ec5252,#6e1a52);">
+	<h2 class="l-text2 t-center">
+		Manuales Digitales
+	</h2>
+	<p class="m-text13 t-center">
+		Tus manuales digitales a vender
+	</p>
+</section>
+
+<!-- Content page -->
+<section class="bgwhite p-t-55 p-b-65">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 col-md-11 col-lg-12 p-b-50">
+				<!-- Product -->
+				<div class="row">
+					{{#each manuales}}
+					<div class="col-sm-12 col-md-6 col-lg-3 p-b-50">
+						<!-- Block2 -->
+						<div class="block2">
+							<div class="block2-img wrap-pic-w of-hidden pos-relative ">
+								<img src="{{imagen}}" alt="IMG-PRODUCT">
+
+								<div class="block2-overlay trans-0-4">
+									
+									<div class="block2-btn-addcart w-size1 trans-0-4">
+										<form action="eliminarmanual" method="post" >
+											<input type="hidden"  name="key" value="{{key}}">
+											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" style= "margin-bottom: 5px";>
+												Eliminar
+											</button>
+										</form>
+
+										<form action="editarmanual" method="get" >
+											<input type="hidden"  name="key" value="{{key}}">
+											<button class=" flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+												Editar
+											</button>
+										</form>
+										
+									</div>
+								</div>
+							</div>
+
+							<div class="block2-txt p-t-20">
+								<a href="productdetail?key={{key}}" class="block2-name dis-block m-text20 p-b-5">
+									{{titulo}}
+								</a>
+								<p class="block2-name dis-block s-text3 p-b-5">
+									{{autor}}
+								</p>
+
+								<p class="block2-name dis-block m-text20 p-b-5" style="color:#B12704;">
+									${{precio}}
+								</p>
+								<p  class="block2-name dis-block s-text5 p-b-5" style="color:rgb(7, 119, 40);">
+									{{tecnologia}}
+								</p>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

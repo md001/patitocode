@@ -1,0 +1,119 @@
+<!-- Topbar -->
+<div class="wrap_header" >
+    <div class="header-icons" >
+        {{#if admin}}
+            <span class="topbar-email">{{user.name}}</span>
+            <span class="linedivide1"></span>
+            <div class="header-wrapicon2">
+                <img src="{{user.picture}}" class="header-icon1 js-show-header-dropdown" alt="{{user.name}}">
+
+                <!-- Header cart noti -->
+                <div class="header-cart header-dropdown">
+                    <ul class="header-cart-wrapitem">
+                        <li class="header-cart-item">
+                            <div class="header-cart-item-img">
+                                <img src="{{user.picture}}" class="header-icon1" alt="{{user.name}}">
+                            </div>
+                            <div class="header-cart-item-txt">
+                                <a href="admin-login" class="header-cart-item-name">{{user.name}}</a>
+                                <span class="header-cart-item-info">{{user.email}}</span>
+                            </div>
+                        </li>
+                    <div class="header-cart-buttons">
+                        <div class="header-cart-wrapbtn">
+                            <!-- Button -->
+                            <button onclick="firebase.auth().signOut()" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <span class="topbar-email">Usuario no logueado</span>
+            <span class="linedivide1"></span>
+            <a href="#" class="header-wrapicon1 dis-block">
+                <img src="images/icons/icon-header-01.png" class="header-icon1" alt="ICON">
+            </a>
+        {{/if}}
+    </div>
+</div>
+
+<!-- Title Page -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background: linear-gradient(.536turn,#ec5252,#6e1a52);">
+    <h2 class="l-text2 t-center">
+        Nuevo Producto
+    </h2>
+    <p class="m-text13 t-center">
+        Agregar un nuevo producto
+    </p>
+</section>
+
+<!-- Content -->
+<section class="bgwhite p-t-66 p-b-60">
+    <div class="container">
+        <form id="form" action="{{action}}" method="post" enctype="multipart/form-data" >
+            <div class="row">
+                <div class="col-md-6 p-b-30">
+                    <input type="hidden"  name="key" value="{{key}}">
+                    <input type="hidden"  name="imagen" value="{{manual.imagen}}">
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="titulo" placeholder="Titulo del Manual" value= '{{manual.titulo}}' >
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="autor" placeholder="Autor" value= '{{manual.autor}}'>
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="tecnologia" placeholder="Tecnología" value= '{{manual.tecnologia}}'>
+                    </div>
+
+                    <textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="descripcion" placeholder="Descripción">{{manual.descripcion}}</textarea>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="number" min="1" step="any" name="precio" placeholder="Precio" value= '{{manual.precio}}'>
+                    </div>
+
+                    <div class="bo4 of-hidden size15 m-b-20">
+                        <input class="sizefull s-text7 p-l-22 p-r-22" type="url" name="archivo" placeholder="Link del archivo PDF" value= '{{manual.archivo}}'>
+                    </div>
+                </div><!-- col-6 -->
+
+                <div class="col-md-6 p-b-30">
+                    {{#if newprod}}
+                        <div id="changeImage" class="bo4 of-hidden size15 m-b-20 form-group" style="padding-top: 10px; padding-bottom: 10px; padding-left: 22px; margin-bottom: 20px; height: auto;">
+                            <label for="exampleFormControlFile1">Ingrese una imagen de portada</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file" accept="image/*" style="margin-bottom: 8px;">
+                            <output id="vistaprevia"></output>
+                        </div>
+                    {{else}}
+                        <div class="bo4 of-hidden size15 m-b-20" style="padding-top: 16px; padding-bottom: 5px; padding-left: 22px; height: auto;">
+                            <input class="s-text7 p-l-22 p-r-22" type="checkbox" name="modImagen" value="modImg" id="chkModImg" onclick="toggleImageChange();">
+                            <label for="mod">Cambiar imagen</label>
+                        </div>
+                        <div id="keepImage" class="bo4 of-hidden size15 m-b-20" style="padding-top: 22px; padding-bottom: 22px; padding-left: 22px; margin-bottom: 20px; height: 344px; display: block;">
+                            <img src="{{manual.imagen}}" alt="{{manual.titulo}}" class="portada" style="max-height: 300px; max-width: 300px;"/>
+                        </div>
+                        <div id="changeImage" class="bo4 of-hidden size15 m-b-20 form-group" style="padding-top: 22px; padding-bottom: 22px; padding-left: 22px; margin-bottom: 20px; height: auto; display: none;">
+                            <label for="exampleFormControlFile1">Ingrese una imagen de portada</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="file" accept="image/*">
+                            <output id="vistaprevia"></output>
+                        </div>
+                    {{/if}}
+                    
+                </div><!-- col-6 -->
+            </div><!-- row -->
+        
+            <div class="row">
+                <div class="col-md-6 p-b-30">
+                    <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">{{label}}</button>
+                    <br />
+                </div>
+                <div class="col-md-6 p-b-30">
+                    <a href="/manualesdigitalesadmin" class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
+                        Cancelar
+                    </a>
+                </div>
+            </div><!-- row -->
+        </form>
+    </div><!-- container -->
+</section>
